@@ -25,5 +25,9 @@ namespace QUANLYBANHANG.BLL
         {
             obj.DeleteCombo(ID);
         }
+        public static void UpdateCombo(Combo combo)
+        {
+            obj.UpdateCombo(combo);
+        }
     }
 }

@@ -154,14 +154,12 @@ namespace QUANLYBANHANG
             this.pn_container = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.checkboxCombo = new System.Windows.Forms.CheckedListBox();
             this.tbURLCombo = new System.Windows.Forms.TextBox();
             this.btnURLCombo = new System.Windows.Forms.Button();
             this.label72 = new System.Windows.Forms.Label();
             this.imgCombo = new System.Windows.Forms.PictureBox();
-            this.tbListPro = new System.Windows.Forms.TextBox();
             this.btnChoosePro = new System.Windows.Forms.Button();
-            this.tbEndDayCombo = new System.Windows.Forms.TextBox();
-            this.tbStartDayCombo = new System.Windows.Forms.TextBox();
             this.tbPriceCombo = new System.Windows.Forms.TextBox();
             this.tbIDCombo = new System.Windows.Forms.TextBox();
             this.tbNameCombo = new System.Windows.Forms.TextBox();
@@ -317,6 +315,8 @@ namespace QUANLYBANHANG
             this.panel19 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.tabAccount = new System.Windows.Forms.TabPage();
+            this.tbEndDayCombo = new System.Windows.Forms.TextBox();
+            this.tbStartDayCombo = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabOrder.SuspendLayout();
             this.panel32.SuspendLayout();
@@ -440,7 +440,7 @@ namespace QUANLYBANHANG
             this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox19.Location = new System.Drawing.Point(433, 550);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(96, 27);
+            this.textBox19.Size = new System.Drawing.Size(96, 23);
             this.textBox19.TabIndex = 25;
             this.textBox19.Text = "50.000";
             this.textBox19.UseWaitCursor = true;
@@ -462,7 +462,7 @@ namespace QUANLYBANHANG
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.Location = new System.Drawing.Point(135, 550);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(96, 27);
+            this.textBox18.Size = new System.Drawing.Size(96, 23);
             this.textBox18.TabIndex = 23;
             this.textBox18.Text = "50.000";
             this.textBox18.UseWaitCursor = true;
@@ -483,7 +483,7 @@ namespace QUANLYBANHANG
             this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox14.Location = new System.Drawing.Point(135, 516);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(96, 27);
+            this.textBox14.Size = new System.Drawing.Size(96, 23);
             this.textBox14.TabIndex = 21;
             this.textBox14.Text = "50.000";
             this.textBox14.UseWaitCursor = true;
@@ -532,7 +532,7 @@ namespace QUANLYBANHANG
             this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox13.Location = new System.Drawing.Point(21, 13);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(194, 27);
+            this.textBox13.Size = new System.Drawing.Size(194, 23);
             this.textBox13.TabIndex = 18;
             this.textBox13.Text = "CB1";
             this.textBox13.UseWaitCursor = true;
@@ -623,7 +623,7 @@ namespace QUANLYBANHANG
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox12.Location = new System.Drawing.Point(186, 162);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(262, 27);
+            this.textBox12.Size = new System.Drawing.Size(262, 23);
             this.textBox12.TabIndex = 20;
             this.textBox12.Text = "50.000";
             this.textBox12.UseWaitCursor = true;
@@ -644,7 +644,7 @@ namespace QUANLYBANHANG
             this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox15.Location = new System.Drawing.Point(186, 115);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(262, 27);
+            this.textBox15.Size = new System.Drawing.Size(262, 23);
             this.textBox15.TabIndex = 18;
             this.textBox15.Text = "50.000";
             this.textBox15.UseWaitCursor = true;
@@ -654,7 +654,7 @@ namespace QUANLYBANHANG
             this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox16.Location = new System.Drawing.Point(186, 70);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(262, 27);
+            this.textBox16.Size = new System.Drawing.Size(262, 23);
             this.textBox16.TabIndex = 17;
             this.textBox16.Text = "CB1";
             this.textBox16.UseWaitCursor = true;
@@ -664,7 +664,7 @@ namespace QUANLYBANHANG
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox17.Location = new System.Drawing.Point(9, 21);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(439, 34);
+            this.textBox17.Size = new System.Drawing.Size(439, 28);
             this.textBox17.TabIndex = 16;
             this.textBox17.Text = "Thông tin khách hàng";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -787,7 +787,7 @@ namespace QUANLYBANHANG
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox11.Location = new System.Drawing.Point(30, 32);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(285, 32);
+            this.textBox11.Size = new System.Drawing.Size(285, 27);
             this.textBox11.TabIndex = 2;
             this.textBox11.UseWaitCursor = true;
             // 
@@ -903,7 +903,7 @@ namespace QUANLYBANHANG
             this.cbCatalog.FormattingEnabled = true;
             this.cbCatalog.Location = new System.Drawing.Point(129, 295);
             this.cbCatalog.Name = "cbCatalog";
-            this.cbCatalog.Size = new System.Drawing.Size(317, 28);
+            this.cbCatalog.Size = new System.Drawing.Size(317, 25);
             this.cbCatalog.TabIndex = 31;
             // 
             // btnChoose
@@ -944,7 +944,7 @@ namespace QUANLYBANHANG
             this.tbIDPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDPro.Location = new System.Drawing.Point(129, 245);
             this.tbIDPro.Name = "tbIDPro";
-            this.tbIDPro.Size = new System.Drawing.Size(317, 27);
+            this.tbIDPro.Size = new System.Drawing.Size(317, 23);
             this.tbIDPro.TabIndex = 16;
             // 
             // label53
@@ -995,7 +995,7 @@ namespace QUANLYBANHANG
             this.tbAmountPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAmountPro.Location = new System.Drawing.Point(129, 407);
             this.tbAmountPro.Name = "tbAmountPro";
-            this.tbAmountPro.Size = new System.Drawing.Size(317, 27);
+            this.tbAmountPro.Size = new System.Drawing.Size(317, 23);
             this.tbAmountPro.TabIndex = 10;
             // 
             // tbPricePro
@@ -1003,7 +1003,7 @@ namespace QUANLYBANHANG
             this.tbPricePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPricePro.Location = new System.Drawing.Point(130, 356);
             this.tbPricePro.Name = "tbPricePro";
-            this.tbPricePro.Size = new System.Drawing.Size(317, 27);
+            this.tbPricePro.Size = new System.Drawing.Size(317, 23);
             this.tbPricePro.TabIndex = 9;
             this.tbPricePro.TextChanged += new System.EventHandler(this.tbPricePro_TextChanged);
             // 
@@ -1012,7 +1012,7 @@ namespace QUANLYBANHANG
             this.tbNamePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNamePro.Location = new System.Drawing.Point(13, 18);
             this.tbNamePro.Name = "tbNamePro";
-            this.tbNamePro.Size = new System.Drawing.Size(439, 34);
+            this.tbNamePro.Size = new System.Drawing.Size(439, 28);
             this.tbNamePro.TabIndex = 8;
             this.tbNamePro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1348,7 +1348,7 @@ namespace QUANLYBANHANG
             this.tbSearchPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchPro.Location = new System.Drawing.Point(469, 14);
             this.tbSearchPro.Name = "tbSearchPro";
-            this.tbSearchPro.Size = new System.Drawing.Size(285, 32);
+            this.tbSearchPro.Size = new System.Drawing.Size(285, 27);
             this.tbSearchPro.TabIndex = 0;
             // 
             // panel4
@@ -1450,7 +1450,7 @@ namespace QUANLYBANHANG
             this.tbIDCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDCatalog.Location = new System.Drawing.Point(129, 142);
             this.tbIDCatalog.Name = "tbIDCatalog";
-            this.tbIDCatalog.Size = new System.Drawing.Size(317, 27);
+            this.tbIDCatalog.Size = new System.Drawing.Size(317, 23);
             this.tbIDCatalog.TabIndex = 16;
             // 
             // label56
@@ -1468,7 +1468,7 @@ namespace QUANLYBANHANG
             this.tbNameCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNameCatalog.Location = new System.Drawing.Point(13, 18);
             this.tbNameCatalog.Name = "tbNameCatalog";
-            this.tbNameCatalog.Size = new System.Drawing.Size(439, 34);
+            this.tbNameCatalog.Size = new System.Drawing.Size(439, 28);
             this.tbNameCatalog.TabIndex = 8;
             this.tbNameCatalog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1709,7 +1709,7 @@ namespace QUANLYBANHANG
             this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox24.Location = new System.Drawing.Point(469, 14);
             this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(285, 32);
+            this.textBox24.Size = new System.Drawing.Size(285, 27);
             this.textBox24.TabIndex = 0;
             // 
             // panel41
@@ -1776,11 +1776,11 @@ namespace QUANLYBANHANG
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel17.BackColor = System.Drawing.Color.Transparent;
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.checkboxCombo);
             this.panel17.Controls.Add(this.tbURLCombo);
             this.panel17.Controls.Add(this.btnURLCombo);
             this.panel17.Controls.Add(this.label72);
             this.panel17.Controls.Add(this.imgCombo);
-            this.panel17.Controls.Add(this.tbListPro);
             this.panel17.Controls.Add(this.btnChoosePro);
             this.panel17.Controls.Add(this.tbEndDayCombo);
             this.panel17.Controls.Add(this.tbStartDayCombo);
@@ -1798,6 +1798,14 @@ namespace QUANLYBANHANG
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(464, 658);
             this.panel17.TabIndex = 6;
+            // 
+            // checkboxCombo
+            // 
+            this.checkboxCombo.FormattingEnabled = true;
+            this.checkboxCombo.Location = new System.Drawing.Point(191, 442);
+            this.checkboxCombo.Name = "checkboxCombo";
+            this.checkboxCombo.Size = new System.Drawing.Size(262, 94);
+            this.checkboxCombo.TabIndex = 37;
             // 
             // tbURLCombo
             // 
@@ -1838,14 +1846,6 @@ namespace QUANLYBANHANG
             this.imgCombo.TabIndex = 33;
             this.imgCombo.TabStop = false;
             // 
-            // tbListPro
-            // 
-            this.tbListPro.Location = new System.Drawing.Point(191, 442);
-            this.tbListPro.Multiline = true;
-            this.tbListPro.Name = "tbListPro";
-            this.tbListPro.Size = new System.Drawing.Size(262, 86);
-            this.tbListPro.TabIndex = 32;
-            // 
             // btnChoosePro
             // 
             this.btnChoosePro.BackColor = System.Drawing.Color.Beige;
@@ -1856,30 +1856,14 @@ namespace QUANLYBANHANG
             this.btnChoosePro.TabIndex = 31;
             this.btnChoosePro.Text = "Chọn";
             this.btnChoosePro.UseVisualStyleBackColor = false;
-            // 
-            // tbEndDayCombo
-            // 
-            this.tbEndDayCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEndDayCombo.Location = new System.Drawing.Point(191, 350);
-            this.tbEndDayCombo.Name = "tbEndDayCombo";
-            this.tbEndDayCombo.Size = new System.Drawing.Size(262, 27);
-            this.tbEndDayCombo.TabIndex = 20;
-            // 
-            // tbStartDayCombo
-            // 
-            this.tbStartDayCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStartDayCombo.Location = new System.Drawing.Point(191, 303);
-            this.tbStartDayCombo.Name = "tbStartDayCombo";
-            this.tbStartDayCombo.Size = new System.Drawing.Size(262, 27);
-            this.tbStartDayCombo.TabIndex = 19;
-            this.tbStartDayCombo.TextChanged += new System.EventHandler(this.tbStartDayCombo_TextChanged);
+            this.btnChoosePro.Click += new System.EventHandler(this.btnChoosePro_Click);
             // 
             // tbPriceCombo
             // 
             this.tbPriceCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPriceCombo.Location = new System.Drawing.Point(191, 252);
             this.tbPriceCombo.Name = "tbPriceCombo";
-            this.tbPriceCombo.Size = new System.Drawing.Size(262, 27);
+            this.tbPriceCombo.Size = new System.Drawing.Size(262, 23);
             this.tbPriceCombo.TabIndex = 18;
             this.tbPriceCombo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1889,7 +1873,7 @@ namespace QUANLYBANHANG
             this.tbIDCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDCombo.Location = new System.Drawing.Point(191, 201);
             this.tbIDCombo.Name = "tbIDCombo";
-            this.tbIDCombo.Size = new System.Drawing.Size(262, 27);
+            this.tbIDCombo.Size = new System.Drawing.Size(262, 23);
             this.tbIDCombo.TabIndex = 17;
             this.tbIDCombo.TextChanged += new System.EventHandler(this.tbIDCombo_TextChanged);
             // 
@@ -1898,7 +1882,7 @@ namespace QUANLYBANHANG
             this.tbNameCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNameCombo.Location = new System.Drawing.Point(14, 14);
             this.tbNameCombo.Name = "tbNameCombo";
-            this.tbNameCombo.Size = new System.Drawing.Size(439, 34);
+            this.tbNameCombo.Size = new System.Drawing.Size(439, 28);
             this.tbNameCombo.TabIndex = 16;
             this.tbNameCombo.Text = "Tên combo";
             this.tbNameCombo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1907,7 +1891,7 @@ namespace QUANLYBANHANG
             // 
             this.tbDiscountCombo.Location = new System.Drawing.Point(191, 399);
             this.tbDiscountCombo.Name = "tbDiscountCombo";
-            this.tbDiscountCombo.Size = new System.Drawing.Size(262, 27);
+            this.tbDiscountCombo.Size = new System.Drawing.Size(262, 23);
             this.tbDiscountCombo.TabIndex = 15;
             this.tbDiscountCombo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -2111,6 +2095,7 @@ namespace QUANLYBANHANG
             this.btnEditCombo.TabIndex = 4;
             this.btnEditCombo.Text = "Sửa";
             this.btnEditCombo.UseVisualStyleBackColor = false;
+            this.btnEditCombo.Click += new System.EventHandler(this.btnEditCombo_Click);
             // 
             // btnAddCombo
             // 
@@ -2142,7 +2127,7 @@ namespace QUANLYBANHANG
             this.tbSearchCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchCombo.Location = new System.Drawing.Point(471, 14);
             this.tbSearchCombo.Name = "tbSearchCombo";
-            this.tbSearchCombo.Size = new System.Drawing.Size(285, 32);
+            this.tbSearchCombo.Size = new System.Drawing.Size(285, 27);
             this.tbSearchCombo.TabIndex = 0;
             // 
             // panel15
@@ -2245,7 +2230,7 @@ namespace QUANLYBANHANG
             this.tbShip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbShip.Location = new System.Drawing.Point(282, 352);
             this.tbShip.Name = "tbShip";
-            this.tbShip.Size = new System.Drawing.Size(175, 20);
+            this.tbShip.Size = new System.Drawing.Size(175, 16);
             this.tbShip.TabIndex = 21;
             this.tbShip.Text = "500.000";
             this.tbShip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2256,7 +2241,7 @@ namespace QUANLYBANHANG
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox9.Location = new System.Drawing.Point(244, 102);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(175, 17);
+            this.textBox9.Size = new System.Drawing.Size(175, 14);
             this.textBox9.TabIndex = 20;
             this.textBox9.Text = "Mua trực tuyến";
             // 
@@ -2293,7 +2278,7 @@ namespace QUANLYBANHANG
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(21, 97);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(66, 20);
+            this.label44.Size = new System.Drawing.Size(55, 17);
             this.label44.TabIndex = 18;
             this.label44.Text = "Địa chỉ:";
             // 
@@ -2303,7 +2288,7 @@ namespace QUANLYBANHANG
             this.tbPhoneShip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPhoneShip.Location = new System.Drawing.Point(165, 69);
             this.tbPhoneShip.Name = "tbPhoneShip";
-            this.tbPhoneShip.Size = new System.Drawing.Size(276, 20);
+            this.tbPhoneShip.Size = new System.Drawing.Size(276, 16);
             this.tbPhoneShip.TabIndex = 17;
             this.tbPhoneShip.Text = "12345678";
             // 
@@ -2313,7 +2298,7 @@ namespace QUANLYBANHANG
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.Location = new System.Drawing.Point(21, 69);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(47, 20);
+            this.label43.Size = new System.Drawing.Size(40, 17);
             this.label43.TabIndex = 16;
             this.label43.Text = "SĐT:";
             // 
@@ -2323,7 +2308,7 @@ namespace QUANLYBANHANG
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox10.Location = new System.Drawing.Point(356, 9);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(94, 22);
+            this.textBox10.Size = new System.Drawing.Size(94, 17);
             this.textBox10.TabIndex = 15;
             this.textBox10.Text = "20/11/2020";
             // 
@@ -2333,7 +2318,7 @@ namespace QUANLYBANHANG
             this.tbNameShipper.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNameShipper.Location = new System.Drawing.Point(165, 43);
             this.tbNameShipper.Name = "tbNameShipper";
-            this.tbNameShipper.Size = new System.Drawing.Size(276, 20);
+            this.tbNameShipper.Size = new System.Drawing.Size(276, 16);
             this.tbNameShipper.TabIndex = 13;
             this.tbNameShipper.Text = "Chú bộ đội";
             // 
@@ -2343,7 +2328,7 @@ namespace QUANLYBANHANG
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(21, 43);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(76, 20);
+            this.label41.Size = new System.Drawing.Size(65, 17);
             this.label41.TabIndex = 1;
             this.label41.Text = "Shipper: ";
             // 
@@ -2353,7 +2338,7 @@ namespace QUANLYBANHANG
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(3, 10);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(174, 20);
+            this.label33.Size = new System.Drawing.Size(154, 17);
             this.label33.TabIndex = 0;
             this.label33.Text = "Thông tin giao hàng";
             // 
@@ -2381,7 +2366,7 @@ namespace QUANLYBANHANG
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox8.Location = new System.Drawing.Point(282, 377);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(175, 20);
+            this.textBox8.Size = new System.Drawing.Size(175, 16);
             this.textBox8.TabIndex = 16;
             this.textBox8.Text = "500.000";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2401,7 +2386,7 @@ namespace QUANLYBANHANG
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(282, 328);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(175, 20);
+            this.textBox6.Size = new System.Drawing.Size(175, 16);
             this.textBox6.TabIndex = 14;
             this.textBox6.Text = "500.000";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2421,7 +2406,7 @@ namespace QUANLYBANHANG
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(282, 304);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(175, 20);
+            this.textBox7.Size = new System.Drawing.Size(175, 16);
             this.textBox7.TabIndex = 12;
             this.textBox7.Text = "500.000";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2486,7 +2471,7 @@ namespace QUANLYBANHANG
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(87, 102);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(151, 17);
+            this.textBox5.Size = new System.Drawing.Size(151, 14);
             this.textBox5.TabIndex = 7;
             this.textBox5.Text = "20/11/2020";
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
@@ -2507,7 +2492,7 @@ namespace QUANLYBANHANG
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(292, 75);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(175, 17);
+            this.textBox4.Size = new System.Drawing.Size(175, 14);
             this.textBox4.TabIndex = 5;
             this.textBox4.Text = "Tên KH";
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
@@ -2528,7 +2513,7 @@ namespace QUANLYBANHANG
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(63, 75);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 17);
+            this.textBox3.Size = new System.Drawing.Size(175, 14);
             this.textBox3.TabIndex = 1;
             this.textBox3.Text = "Tên KH";
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -2551,7 +2536,7 @@ namespace QUANLYBANHANG
             this.tbIDInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDInvoice.Location = new System.Drawing.Point(240, 15);
             this.tbIDInvoice.Name = "tbIDInvoice";
-            this.tbIDInvoice.Size = new System.Drawing.Size(207, 23);
+            this.tbIDInvoice.Size = new System.Drawing.Size(207, 19);
             this.tbIDInvoice.TabIndex = 13;
             this.tbIDInvoice.Text = "123";
             // 
@@ -2706,7 +2691,7 @@ namespace QUANLYBANHANG
             this.tbSearchInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchInvoice.Location = new System.Drawing.Point(469, 14);
             this.tbSearchInvoice.Name = "tbSearchInvoice";
-            this.tbSearchInvoice.Size = new System.Drawing.Size(285, 32);
+            this.tbSearchInvoice.Size = new System.Drawing.Size(285, 27);
             this.tbSearchInvoice.TabIndex = 0;
             // 
             // panel23
@@ -2785,7 +2770,7 @@ namespace QUANLYBANHANG
             this.tbPassCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassCus.Location = new System.Drawing.Point(181, 584);
             this.tbPassCus.Name = "tbPassCus";
-            this.tbPassCus.Size = new System.Drawing.Size(262, 27);
+            this.tbPassCus.Size = new System.Drawing.Size(262, 23);
             this.tbPassCus.TabIndex = 28;
             // 
             // label57
@@ -2803,7 +2788,7 @@ namespace QUANLYBANHANG
             this.tbUsernameCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsernameCus.Location = new System.Drawing.Point(181, 527);
             this.tbUsernameCus.Name = "tbUsernameCus";
-            this.tbUsernameCus.Size = new System.Drawing.Size(262, 27);
+            this.tbUsernameCus.Size = new System.Drawing.Size(262, 23);
             this.tbUsernameCus.TabIndex = 26;
             // 
             // label23
@@ -2821,7 +2806,7 @@ namespace QUANLYBANHANG
             this.tbPhoneCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPhoneCus.Location = new System.Drawing.Point(186, 286);
             this.tbPhoneCus.Name = "tbPhoneCus";
-            this.tbPhoneCus.Size = new System.Drawing.Size(262, 27);
+            this.tbPhoneCus.Size = new System.Drawing.Size(262, 23);
             this.tbPhoneCus.TabIndex = 24;
             // 
             // label55
@@ -2840,7 +2825,7 @@ namespace QUANLYBANHANG
             this.tbJoinDateCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbJoinDateCus.Location = new System.Drawing.Point(182, 443);
             this.tbJoinDateCus.Name = "tbJoinDateCus";
-            this.tbJoinDateCus.Size = new System.Drawing.Size(262, 27);
+            this.tbJoinDateCus.Size = new System.Drawing.Size(262, 23);
             this.tbJoinDateCus.TabIndex = 22;
             // 
             // tbAdressCus
@@ -2858,7 +2843,7 @@ namespace QUANLYBANHANG
             this.tbBirthCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBirthCus.Location = new System.Drawing.Point(186, 230);
             this.tbBirthCus.Name = "tbBirthCus";
-            this.tbBirthCus.Size = new System.Drawing.Size(262, 27);
+            this.tbBirthCus.Size = new System.Drawing.Size(262, 23);
             this.tbBirthCus.TabIndex = 20;
             // 
             // tbGenderCus
@@ -2866,7 +2851,7 @@ namespace QUANLYBANHANG
             this.tbGenderCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbGenderCus.Location = new System.Drawing.Point(186, 166);
             this.tbGenderCus.Name = "tbGenderCus";
-            this.tbGenderCus.Size = new System.Drawing.Size(262, 27);
+            this.tbGenderCus.Size = new System.Drawing.Size(262, 23);
             this.tbGenderCus.TabIndex = 19;
             // 
             // tbIDCus
@@ -2875,7 +2860,7 @@ namespace QUANLYBANHANG
             this.tbIDCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDCus.Location = new System.Drawing.Point(186, 114);
             this.tbIDCus.Name = "tbIDCus";
-            this.tbIDCus.Size = new System.Drawing.Size(262, 27);
+            this.tbIDCus.Size = new System.Drawing.Size(262, 23);
             this.tbIDCus.TabIndex = 17;
             // 
             // tbNameCus
@@ -2883,7 +2868,7 @@ namespace QUANLYBANHANG
             this.tbNameCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNameCus.Location = new System.Drawing.Point(20, 52);
             this.tbNameCus.Name = "tbNameCus";
-            this.tbNameCus.Size = new System.Drawing.Size(439, 34);
+            this.tbNameCus.Size = new System.Drawing.Size(439, 28);
             this.tbNameCus.TabIndex = 16;
             this.tbNameCus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -3126,7 +3111,7 @@ namespace QUANLYBANHANG
             this.tbSearchCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchCus.Location = new System.Drawing.Point(477, 14);
             this.tbSearchCus.Name = "tbSearchCus";
-            this.tbSearchCus.Size = new System.Drawing.Size(285, 32);
+            this.tbSearchCus.Size = new System.Drawing.Size(285, 27);
             this.tbSearchCus.TabIndex = 0;
             // 
             // panel2
@@ -3201,7 +3186,7 @@ namespace QUANLYBANHANG
             this.tbPassStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassStaff.Location = new System.Drawing.Point(186, 530);
             this.tbPassStaff.Name = "tbPassStaff";
-            this.tbPassStaff.Size = new System.Drawing.Size(262, 27);
+            this.tbPassStaff.Size = new System.Drawing.Size(262, 23);
             this.tbPassStaff.TabIndex = 34;
             // 
             // label28
@@ -3219,7 +3204,7 @@ namespace QUANLYBANHANG
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(186, 401);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(262, 28);
+            this.cbRole.Size = new System.Drawing.Size(262, 25);
             this.cbRole.TabIndex = 32;
             // 
             // label31
@@ -3247,7 +3232,7 @@ namespace QUANLYBANHANG
             this.tbGenderStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbGenderStaff.Location = new System.Drawing.Point(185, 208);
             this.tbGenderStaff.Name = "tbGenderStaff";
-            this.tbGenderStaff.Size = new System.Drawing.Size(262, 27);
+            this.tbGenderStaff.Size = new System.Drawing.Size(262, 23);
             this.tbGenderStaff.TabIndex = 19;
             // 
             // tbUsernameStaff
@@ -3255,7 +3240,7 @@ namespace QUANLYBANHANG
             this.tbUsernameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsernameStaff.Location = new System.Drawing.Point(187, 472);
             this.tbUsernameStaff.Name = "tbUsernameStaff";
-            this.tbUsernameStaff.Size = new System.Drawing.Size(262, 27);
+            this.tbUsernameStaff.Size = new System.Drawing.Size(262, 23);
             this.tbUsernameStaff.TabIndex = 18;
             // 
             // tbIDStaff
@@ -3264,7 +3249,7 @@ namespace QUANLYBANHANG
             this.tbIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDStaff.Location = new System.Drawing.Point(186, 138);
             this.tbIDStaff.Name = "tbIDStaff";
-            this.tbIDStaff.Size = new System.Drawing.Size(262, 27);
+            this.tbIDStaff.Size = new System.Drawing.Size(262, 23);
             this.tbIDStaff.TabIndex = 17;
             // 
             // tbNameStaff
@@ -3272,7 +3257,7 @@ namespace QUANLYBANHANG
             this.tbNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNameStaff.Location = new System.Drawing.Point(20, 52);
             this.tbNameStaff.Name = "tbNameStaff";
-            this.tbNameStaff.Size = new System.Drawing.Size(439, 34);
+            this.tbNameStaff.Size = new System.Drawing.Size(439, 28);
             this.tbNameStaff.TabIndex = 16;
             this.tbNameStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -3502,7 +3487,7 @@ namespace QUANLYBANHANG
             this.tbSearchStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchStaff.Location = new System.Drawing.Point(477, 14);
             this.tbSearchStaff.Name = "tbSearchStaff";
-            this.tbSearchStaff.Size = new System.Drawing.Size(285, 32);
+            this.tbSearchStaff.Size = new System.Drawing.Size(285, 27);
             this.tbSearchStaff.TabIndex = 0;
             // 
             // panel19
@@ -3536,6 +3521,23 @@ namespace QUANLYBANHANG
             this.tabAccount.TabIndex = 6;
             this.tabAccount.Text = "Tài khoản";
             this.tabAccount.UseVisualStyleBackColor = true;
+            // 
+            // tbEndDayCombo
+            // 
+            this.tbEndDayCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndDayCombo.Location = new System.Drawing.Point(191, 350);
+            this.tbEndDayCombo.Name = "tbEndDayCombo";
+            this.tbEndDayCombo.Size = new System.Drawing.Size(262, 23);
+            this.tbEndDayCombo.TabIndex = 20;
+            // 
+            // tbStartDayCombo
+            // 
+            this.tbStartDayCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStartDayCombo.Location = new System.Drawing.Point(191, 303);
+            this.tbStartDayCombo.Name = "tbStartDayCombo";
+            this.tbStartDayCombo.Size = new System.Drawing.Size(262, 23);
+            this.tbStartDayCombo.TabIndex = 19;
+            this.tbStartDayCombo.TextChanged += new System.EventHandler(this.tbStartDayCombo_TextChanged);
             // 
             // Form1
             // 
@@ -3703,8 +3705,6 @@ namespace QUANLYBANHANG
         private System.Windows.Forms.TextBox tbAmountPro;
         private System.Windows.Forms.TextBox tbPricePro;
         private System.Windows.Forms.TextBox tbNamePro;
-        private System.Windows.Forms.TextBox tbEndDayCombo;
-        private System.Windows.Forms.TextBox tbStartDayCombo;
         private System.Windows.Forms.TextBox tbPriceCombo;
         private System.Windows.Forms.TextBox tbIDCombo;
         private System.Windows.Forms.TextBox tbNameCombo;
@@ -3843,7 +3843,6 @@ namespace QUANLYBANHANG
         private RichTextBox tbURL;
         private Label label54;
         private Button btnChoose;
-        private TextBox tbListPro;
         private Button btnChoosePro;
         private ComboBox cbCatalog;
         private TabPage tabCatalog;
@@ -3920,6 +3919,9 @@ namespace QUANLYBANHANG
         private DataGridViewTextBoxColumn address_staff;
         private DataGridViewTextBoxColumn joindate_staff;
         private DataGridViewTextBoxColumn pass_staff;
+        private CheckedListBox checkboxCombo;
+        private TextBox tbEndDayCombo;
+        private TextBox tbStartDayCombo;
     }
 }
 

@@ -24,6 +24,24 @@ namespace QUANLYBANHANG.DAL
             da.Fill(dt);
             return dt;
         }
+        public List<String> GetProducts()
+        {
+            List<String> data = new List<String>();
+            string query = "select ID from product";
+            ConnectDB.DbConnection();
+            SqlCommand cmd = new SqlCommand(query, ConnectDB.db);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    String ID = reader["ID"].ToString();
+                    data.Add(ID);
+                }
+                reader.NextResult();
+            }
+            return data;
+        }
         public Product GetProByID(string ID)
         {
             ConnectDB.DbConnection();
