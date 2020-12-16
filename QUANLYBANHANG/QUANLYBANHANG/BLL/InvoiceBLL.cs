@@ -16,6 +16,10 @@ namespace QUANLYBANHANG.BLL
         {
             return obj.GetAll();
         }
+        public DataTable GetAllDetail(string ID)
+        {
+            return obj.GetAllDetail(ID);
+        }
         public Invoice GetByID(string ID)
         {
             return obj.GetInvoiceByID(ID);
