@@ -12,9 +12,12 @@ namespace QUANLYBANHANG
         public static SqlConnection db;
         public static void DbConnection()
         {
-            db = new SqlConnection(@"server=DESKTOP-NIVOU6F\SQLEXPRESS; database=BanHang; integrated security = true;");
+
+            db = new SqlConnection(@"server=.; database=BanHang; integrated security = true;");
+//             db = new SqlConnection(@"server=DESKTOP-NIVOU6F\SQLEXPRESS; database=BanHang; integrated security = true;");
 
             // db = new SqlConnection(@"server=DESKTOP-R826P0H\MSSQLSERVER1; database=BanHang; integrated security = true;");
+
             //DESKTOP - R826P0H\MSSQLSERVER1
             db.Open();
         }

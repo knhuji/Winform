@@ -52,6 +52,21 @@ namespace QUANLYBANHANG.DAL
                 return null;
             }
         }
+        public void UpdateCombo(Combo combo)
+        {
+            ConnectDB.DbConnection();
+            string query = "update combo set Combo_Name =@Combo_Name,Product_List =@Product_List, startDate =@startDate, endDate =@endDate, totalMoney = @totalMoney, discountMoney = @discountMoney, Image_Combo=@Image_Combo where ID = @ID";
+            SqlCommand cmd = new SqlCommand(query, ConnectDB.db);
+            cmd.Parameters.AddWithValue("Combo_Name", combo.combo_name);
+            cmd.Parameters.AddWithValue("Product_List", combo.product_list);
+            cmd.Parameters.AddWithValue("startDate", combo.start_date);
+            cmd.Parameters.AddWithValue("endDate", combo.end_date);
+            cmd.Parameters.AddWithValue("totalMoney", combo.total_money);
+            cmd.Parameters.AddWithValue("discountMoney", combo.discount_money);
+            cmd.Parameters.AddWithValue("Image_Combo", combo.image_combo);
+            cmd.Parameters.AddWithValue("ID", combo.combo_ID);
+            cmd.ExecuteNonQuery();
+        }
         public void DeleteCombo(string ID)
         {
             ConnectDB.DbConnection();

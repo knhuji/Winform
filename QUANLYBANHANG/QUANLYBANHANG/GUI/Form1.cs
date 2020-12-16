@@ -202,6 +202,7 @@ namespace QUANLYBANHANG
         /*-------------Combo-------------*/
         private void tblCombo_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            checkboxCombo.Items.Clear();
             DataGridViewRow row = tblCombo.Rows[e.RowIndex];
             Combo combo = cbo.GetComboByID(row.Cells["id_combo"].Value.ToString());
             tbNameCombo.Text = combo.combo_name.ToString();
@@ -210,9 +211,17 @@ namespace QUANLYBANHANG
             tbStartDayCombo.Text = combo.start_date.ToString();
             tbEndDayCombo.Text = combo.end_date.ToString();
             tbDiscountCombo.Text = combo.discount_money.ToString();
-            tbListPro.Text = combo.product_list.ToString();
+            String[] pd = combo.product_list.ToString().Split(';');
+            foreach (var product_id in pd)
+            {
+                Product product = pro.GetProByID(product_id.ToString());
+                checkboxCombo.Items.Add(product.product_ID.ToString()+":"+product.product_name.ToString(),isChecked:true);
+                
+            }
+
             tbURLCombo.Text = combo.image_combo.ToString();
             imgCombo.ImageLocation = combo.image_combo.ToString();
+            btnChoosePro.Text = "Chọn";
             btnEditCombo.Visible = true;
             btnDeleteCombo.Visible = true;
             btnChoosePro.Visible = true;
@@ -221,9 +230,61 @@ namespace QUANLYBANHANG
         private void btnDeleteCombo_Click(object sender, EventArgs e)
         {
             ComboBLL.DeleteCombo(tbIDCombo.Text);
-            tblCombo.DataSource = pro.GetAll();
+            tblCombo.DataSource = cbo.GetAll();
         }
+        private void btnChoosePro_Click(object sender, EventArgs e)
+        {
+            if (btnChoosePro.Text.Equals("Chọn"))
+            {
+                checkboxCombo.Items.Clear();
+                List<String> product = pro.GetProducts();
+                foreach (var product_id in product)
+                {
+                    Combo combo = cbo.GetComboByID(tbIDCombo.Text.ToString());
+                    if (combo.product_list.ToString().Contains(product_id))
+                    {
+                        Console.WriteLine(product_id.Contains(combo.product_list.ToString()));
+                        Product pd = pro.GetProByID(product_id.ToString());
+                        checkboxCombo.Items.Add(pd.product_ID.ToString() + ":" + pd.product_name.ToString(), isChecked: true);
+                    }
+                    else
+                    {
+                        Product pd = pro.GetProByID(product_id.ToString());
+                        checkboxCombo.Items.Add(pd.product_ID.ToString() + ":" + pd.product_name.ToString());
+                    }
 
+                }
+            }
+            
+        }
+        private void btnEditCombo_Click(object sender, EventArgs e)
+        {
+            Combo combo = new Combo();
+            combo.combo_ID = Convert.ToInt32(tbIDCombo.Text);
+            combo.combo_name = tbNameCombo.Text;
+            combo.start_date = Convert.ToDateTime(tbStartDayCombo.Text);
+            combo.end_date = Convert.ToDateTime(tbEndDayCombo.Text);
+            combo.discount_money = tbDiscountCombo.Text;
+            combo.total_money = tbPriceCombo.Text;
+            combo.image_combo = tbURLCombo.Text;
+            String product_list = "";
+            foreach (String s in checkboxCombo.CheckedItems)
+            {               
+                String[] list = s.Split(':');
+                product_list += list[0] + ";";               
+            }
+            combo.product_list = product_list.TrimEnd(';');
+            checkboxCombo.Refresh();
+            ComboBLL.UpdateCombo(combo);
+            String[] pd = product_list.TrimEnd(';').Split(';');
+            foreach (var product_id in pd)
+            {
+                Product product = pro.GetProByID(product_id.ToString());
+                checkboxCombo.Items.Add(product.product_ID.ToString() + ":" + product.product_name.ToString(), isChecked: true);
+
+            }
+            tblCombo.DataSource = cbo.GetAll();
+        }
         /*-------------End Combo-------------*/
         /*-------------Employee-------------*/
         private void tblStaff_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -522,6 +583,7 @@ namespace QUANLYBANHANG
         {
 
         }
+
 
         private void tblgetPro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

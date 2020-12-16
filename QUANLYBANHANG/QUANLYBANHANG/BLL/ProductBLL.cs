@@ -16,6 +16,10 @@ namespace QUANLYBANHANG.BLL
         {
             return obj.GetAll();
         }
+        public List<String> GetProducts()
+        {
+            return obj.GetProducts();
+        }
         public Product GetProByID(String ID)
         {
             return obj.GetProByID(ID);
