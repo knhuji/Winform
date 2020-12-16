@@ -77,12 +77,14 @@
     <Compile Include="BLL\ComboBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\InvoiceBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DAL\CatalogDAL.cs" />
     <Compile Include="DAL\ComboDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\InvoiceDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="GUI\AddEmp.cs">
       <SubType>Form</SubType>

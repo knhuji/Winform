@@ -61,7 +61,7 @@ namespace QUANLYBANHANG.DAL
                             product_ID = Convert.ToInt32(dr["ID"].ToString()),
                             product_name = dr["Product_Name"].ToString(),
                             catalog_ID = Convert.ToInt32(dr["Catalog_ID"].ToString()),
-                            price = dr["Price"].ToString(),
+                            price = Convert.ToInt32(dr["Price"].ToString()),
                             amount = Convert.ToInt32(dr["Amount"].ToString()),
                             product_detail = dr["Detail"].ToString(),
                             img = dr["Image_Name"].ToString(),

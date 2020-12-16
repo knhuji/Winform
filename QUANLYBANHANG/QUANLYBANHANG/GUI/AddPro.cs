@@ -38,7 +38,7 @@ namespace QUANLYBANHANG.GUI
             Product product = new Product();
             product.product_name = tbName.Text;
             product.catalog_ID = Convert.ToInt32(cbCatalog.SelectedValue);
-            product.price = tbPrice.Text;
+            product.price = Convert.ToInt32(tbPrice.Text);
             product.amount = Convert.ToInt32(tbAmount.Text);
             product.img = tbURL.Text;
             product.product_detail = tbDetail.Text;

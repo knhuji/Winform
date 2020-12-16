@@ -41,11 +41,11 @@ namespace QUANLYBANHANG.DAL
                             combo_ID = Convert.ToInt32(dr["ID"].ToString()),
                             combo_name = dr["Combo_Name"].ToString(),
                             product_list = dr["Product_List"].ToString(),
-                            total_money = dr["totalMoney"].ToString(),
-                            discount_money = dr["discountMoney"].ToString(),
+                            total_money = Convert.ToInt32(dr["totalMoney"].ToString()),
+                            discount_money = Convert.ToInt32(dr["discountMoney"].ToString()),
                             start_date = Convert.ToDateTime(dr["startDate"].ToString()),
                             end_date = Convert.ToDateTime(dr["endDate"].ToString()),
-                            image_combo = dr["Image_Combo"].ToString(),
+                            image_combo = dr["image_combo"].ToString(),
                         };
                     }
                 }   
