@@ -14,9 +14,9 @@ namespace QUANLYBANHANG.Model
         public string product_list { get; set; }
         public DateTime start_date { get; set; }
         public DateTime end_date { get; set; }
-        public string total_money { get; set; }
-        public string discount { get; set; }
-        public string discount_money { get; set; }
+        public int total_money { get; set; }
+        public int discount { get; set; }
+        public int discount_money { get; set; }
         public string image_combo { get; set; }
     }
 }

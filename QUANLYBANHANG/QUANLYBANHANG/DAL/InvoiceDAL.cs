@@ -15,11 +15,26 @@ namespace QUANLYBANHANG.DAL
         {
             string query = "select Invoice.ID , Invoice.Invoice_Name," +
                 " Invoice.totalMoney , Invoice.createdDate ," +
-                " Invoice.customerAddress , Invoice.shipDate , " +
-                "Employee.lastName as shiper " +
-                "  from Invoice join Employee on Invoice.Shipper_ID = Employee.ID";
+                " Invoice.customerAddress  " +
+                "  from Invoice  ";
             ConnectDB.DbConnection();
             SqlCommand command = new SqlCommand(query, ConnectDB.db);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = command;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable GetAllDetail(string ID)
+        {
+            string query = "select Invoice_ID , Product_ID," +
+                " Combo_ID , Amount ," +
+                " Price  " +
+                "  from InvoiceDetail where  Invoice_ID=@ID";
+            ConnectDB.DbConnection();
+            SqlCommand command = new SqlCommand(query, ConnectDB.db);
+            command.Parameters.AddWithValue("@ID", ID);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = command;
             DataTable dt = new DataTable();
@@ -43,7 +58,7 @@ namespace QUANLYBANHANG.DAL
                         {
                             ID = Convert.ToInt32(dr["ID"].ToString()),
                             Invoice_Name = dr["Invoice_Name"].ToString(),
-                            totalMoney = dr["totalMoney"].ToString(),
+                            totalMoney = Convert.ToInt32(dr["totalMoney"].ToString()),
                             createdDate = dr["createdDate"].ToString(),
                             shipDate = dr["shipDate"].ToString(),
                             customerAddress = dr["customerAddress"].ToString()
@@ -56,7 +71,7 @@ namespace QUANLYBANHANG.DAL
         public InvoiceDetail GetInvoiceDetailByID(string ID)
         {
             ConnectDB.DbConnection();
-            string query = "Select * from InvoiceDetail where Invoice_ID=@Invoice_ID";
+            string query = "Select * from InvoiceDetail where Invoice_ID=@ID";
             SqlCommand cmd = new SqlCommand(query, ConnectDB.db);
             cmd.Parameters.AddWithValue("@ID", ID);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -71,7 +86,7 @@ namespace QUANLYBANHANG.DAL
                             Product_ID = Convert.ToInt32(dr["Product_ID"].ToString()),
                             Combo_ID = Convert.ToInt32(dr["Combo_ID"].ToString()),
                             Amount = Convert.ToInt32(dr["Amount"].ToString()),
-                            Price = dr["Price"].ToString()
+                            Price = Convert.ToInt32(dr["Price"].ToString())
                         };
                     }
                 }

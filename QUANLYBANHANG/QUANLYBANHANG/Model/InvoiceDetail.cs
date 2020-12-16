@@ -12,6 +12,6 @@ namespace QUANLYBANHANG.Model
         public int Product_ID { get; set; }
         public int Combo_ID { get; set; }
         public int Amount { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
     }
 }

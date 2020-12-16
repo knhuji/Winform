@@ -48,6 +48,11 @@ namespace QUANLYBANHANG
             dt = pro.GetAll();
             dt1 = dt.DefaultView.ToTable(true, "Product_Name", "Price", "Amount", "ID");
             tblgetPro.DataSource = dt1;
+            DataTable dtcb = new DataTable();
+            DataTable dtcb1 = new DataTable();
+            dtcb = cbo.GetAll();
+            dtcb1 = dtcb.DefaultView.ToTable(true, "ID", "combo_name", "totalmoney");
+            dataGridView3.DataSource = dtcb1;
             labelerror.Visible = false;
 
         }
@@ -133,7 +138,7 @@ namespace QUANLYBANHANG
             product.product_ID = Convert.ToInt32(tbIDPro.Text);
             product.product_name = tbNamePro.Text;
             product.catalog_ID = Convert.ToInt32(cbCatalog.SelectedValue);
-            product.price = tbPricePro.Text;
+            product.price = Convert.ToInt32(tbPricePro.Text);
             product.amount = Convert.ToInt32(tbAmountPro.Text);
             product.img = tbURL.Text;
             product.product_detail = tbDetailPro.Text;
@@ -521,6 +526,7 @@ namespace QUANLYBANHANG
         private void tblgetPro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = tblgetPro.Rows[e.RowIndex];
+            
             Product product = pro.GetProByID(row.Cells["id_product"].Value.ToString());
             tbgetidpro.Text = product.product_ID.ToString();
             tbgetsl.Text = "1";
@@ -629,7 +635,7 @@ namespace QUANLYBANHANG
                 Invoice inv = new Invoice();
                 inv.Customer_ID = Convert.ToInt32(tbidcustomer.Text);
                 inv.Invoice_Name = tbname_cus.Text;
-                inv.totalMoney = tbtotalbill.Text;
+                inv.totalMoney = Convert.ToInt32(tbtotalbill.Text);
                 inv.createdDate = Convert.ToString(DateTime.Now.Date);
                 inv.shipDate = Convert.ToString(DateTime.Now.Date);
                 inv.customerAddress = tbaddress_cus.Text;
@@ -646,7 +652,7 @@ namespace QUANLYBANHANG
                         {
                             invoicedetail.Invoice_ID = ab;
                             invoicedetail.Product_ID = Convert.ToInt32(tbldetailnivoice.Rows[i].Cells["ID_Pronivoice"].Value.ToString());
-                            invoicedetail.Price = tbldetailnivoice.Rows[i].Cells["thanhtien"].Value.ToString();
+                            invoicedetail.Price = Convert.ToInt32(tbldetailnivoice.Rows[i].Cells["thanhtien"].Value.ToString());
                             invoicedetail.Amount = Convert.ToInt32(tbldetailnivoice.Rows[i].Cells["soluongsp"].Value.ToString());
                             InvoiceBLL.AddInvoiceDetail(invoicedetail);
                         }
@@ -668,6 +674,33 @@ namespace QUANLYBANHANG
                     MessageBox.Show("Vui lòng kiểm tra thông tin!");
                 }
             }
+        }
+
+        private void dataGridView3_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridView3.Rows[e.RowIndex];
+            Combo combo = cbo.GetComboByID(row.Cells["combo_id"].Value.ToString());
+            tbgetidcombo.Text = combo.combo_ID.ToString();
+            tbgetslcombo.Text = "1";
+        }
+
+        private void tblInvoice_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = tblInvoice.Rows[e.RowIndex];
+            Invoice Invoice = invoice.GetByID(row.Cells["id_invoice"].Value.ToString());
+            tblDetailInvoice.DataSource = invoice.GetDetailByID(Invoice.ID.ToString());
+            tbIDInvoice.Text = Invoice.ID.ToString();
+            DataTable dtdt = new DataTable();
+            DataTable dtdt1 = new DataTable();
+            dtdt = invoice.GetAllDetail(Invoice.ID.ToString());
+            //  dtcb = cbo.GetAll();
+            dtdt1 = dtdt.DefaultView.ToTable(true, "Product_ID", "Combo_ID", "Amount", "Price");
+            tblDetailInvoice.DataSource = dtdt1;
+            
+            //tbdatecreate.Text = Invoice.createdDate.ToString();
+            tbnameCustomer.Text = Invoice.Invoice_Name.ToString();
+            tbTotalmoney.Text = Invoice.totalMoney.ToString();
+            
         }
     }
 }
