@@ -32,5 +32,9 @@ namespace QUANLYBANHANG.BLL
         {
             obj.AddCus(customer);
         }
+        public Customer GetCusByPhone(String phoneNumber)
+        {
+            return obj.GetCusByPhone(phoneNumber);
+        }
     }
 }

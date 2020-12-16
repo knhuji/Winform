@@ -52,6 +52,36 @@ namespace QUANLYBANHANG.DAL
                 return null;
             }
         }
+        public Customer GetCusByPhone(string phoneNumber)
+        {
+            ConnectDB.DbConnection();
+            string query = "Select * from customer where phoneNumber=@phoneNumber";
+            SqlCommand cmd = new SqlCommand(query, ConnectDB.db);
+            cmd.Parameters.AddWithValue("@phoneNumber", phoneNumber);
+            SqlDataReader dr = cmd.ExecuteReader();
+            {
+                if (dr.HasRows)
+                {
+                    if (dr.Read())
+                    {
+                        return new Customer()
+                        {
+                            ID = Convert.ToInt32(dr["ID"].ToString()),
+                            username = dr["username"].ToString(),
+                            password = dr["password"].ToString(),
+                            firstName = dr["firstName"].ToString(),
+                            phoneNumber = dr["phoneNumber"].ToString(),
+                            lastName = dr["lastName"].ToString(),
+                            gender = dr["gender"].ToString(),
+                            birthDate = Convert.ToDateTime(dr["birthDate"].ToString()),
+                            joinDate = Convert.ToDateTime(dr["joinDate"].ToString()),
+                            address = dr["address"].ToString()
+                        };
+                    }
+                }
+                return null;
+            }
+        }
         public void UpdateCus(Customer customer)
         {
             ConnectDB.DbConnection();

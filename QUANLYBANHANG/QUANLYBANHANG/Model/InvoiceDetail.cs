@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace QUANLYBANHANG.Model
 {
-    class InvoiceDetail
+    public class InvoiceDetail
     {
-        public int invoice_ID { get; set; }
-        public int product_ID { get; set; }
-        public int combo_ID { get; set; }
-        public int amount { get; set; }
-        public string price { get; set; }
+        public int Invoice_ID { get; set; }
+        public int Product_ID { get; set; }
+        public int Combo_ID { get; set; }
+        public int Amount { get; set; }
+        public string Price { get; set; }
     }
 }

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace QUANLYBANHANG.Model
 {
-    class Invoice
+    public class Invoice
     {
-        public int invoice_ID { get; set; }
-        public string invoice_name { get; set; }
-        public int customer_ID { get; set; }
-        public int shipper_ID { get; set; }
-        public string total_money { get; set; }
-        public Date created_date { get; set; }
-        public string customer_address { get; set; }
-        public Date ship_date { get; set; }
+        public int ID { get; set; }
+        public string Invoice_Name { get; set; }
+        public int Customer_ID { get; set; }
+        public int Shipper_ID { get; set; }
+        public string totalMoney { get; set; }
+        public string createdDate { get; set; }
+        public string customerAddress { get; set; }
+        public string shipDate { get; set; }
     }
 }

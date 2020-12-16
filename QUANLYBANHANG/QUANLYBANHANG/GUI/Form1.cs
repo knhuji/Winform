@@ -20,6 +20,7 @@ namespace QUANLYBANHANG
         private static ComboBLL cbo = new ComboBLL();
         private static CatalogBLL ca = new CatalogBLL();
         private static EmployeeBLL emp = new EmployeeBLL();
+        private static InvoiceBLL invoice = new InvoiceBLL();
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +42,13 @@ namespace QUANLYBANHANG
             btnChoose.Visible = false;
             btnEditStaff.Visible = false;
             btnDeleteStaff.Visible = false;
+            tblInvoice.DataSource = invoice.GetAll();
+           // DataTable dt = new DataTable();
+            DataTable dt1 = new DataTable();
+            dt = pro.GetAll();
+            dt1 = dt.DefaultView.ToTable(true, "Product_Name", "Price", "Amount", "ID");
+            tblgetPro.DataSource = dt1;
+            labelerror.Visible = false;
 
         }
         /*-------------Customer-------------*/
@@ -508,6 +516,158 @@ namespace QUANLYBANHANG
         private void lb2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tblgetPro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = tblgetPro.Rows[e.RowIndex];
+            Product product = pro.GetProByID(row.Cells["id_product"].Value.ToString());
+            tbgetidpro.Text = product.product_ID.ToString();
+            tbgetsl.Text = "1";
+
+        }
+
+        private void btnaddcart_Click(object sender, EventArgs e)
+        {
+            string id = tbgetidpro.Text;
+            if (id == "")
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm!");
+            }
+            else
+            {
+                Product product = pro.GetProByID(id);
+                string thanhtien = (Convert.ToInt32(product.price) * Convert.ToInt32(tbgetsl.Text)).ToString();
+                tbldetailnivoice.Rows.Add(id, product.product_name, product.price, tbgetsl.Text, thanhtien, 1);
+                int a = tbldetailnivoice.Rows.Count;
+                double tongtien = 0;
+                for (int i = 0; i < a - 1; i++)
+                {
+                    tongtien = tongtien + double.Parse(tbldetailnivoice.Rows[i].Cells["thanhtien"].Value.ToString());
+                }
+
+                tbtamtinh.Text = tongtien.ToString();
+                tbtotalbill.Text = (Convert.ToInt32(tbtamtinh.Text) + Convert.ToInt32(tbfeeship.Text)).ToString();
+
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                Customer customer = cus.GetCusByID("1");
+                tbidcustomer.Text = "1";
+                tbname_cus.Text = customer.firstName + " " + customer.lastName;
+                tbphone_cus.Text = customer.phoneNumber;
+            }
+            if (checkBox1.Checked == false)
+            {
+                tbidcustomer.Text = "";
+                tbname_cus.Text = " ";
+                tbphone_cus.Text = "";
+            }
+        }
+
+        private void checkship_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkship.Checked == true)
+            {
+                tbfeeship.Text = "30000";
+                tbtotalbill.Text = (Convert.ToInt32(tbtamtinh.Text) + 30000).ToString();
+            }
+            if (checkship.Checked == false)
+            {
+                tbfeeship.Text = " ";
+                tbtotalbill.Text = tbtamtinh.Text;
+            }
+        }
+
+        private void btnfindphone_cus_Click(object sender, EventArgs e)
+        {
+            string phonenumber = tbphonenumer_cus.Text;
+            Customer customer = cus.GetCusByPhone(phonenumber);
+            if (customer != null)
+            {
+                labelerror.Visible = false;
+                tbidcustomer.Text = customer.ID.ToString();
+                tbname_cus.Text = customer.firstName + " " + customer.lastName;
+                tbphone_cus.Text = phonenumber;
+                tbaddress_cus.Text = customer.address;
+            }
+            else
+            {
+                labelerror.Visible = true;
+                tbidcustomer.Text = "";
+                tbname_cus.Text = " ";
+                tbphone_cus.Text = "";
+            }
+        }
+
+        private void tbphonenumer_cus_TextChanged(object sender, EventArgs e)
+        {
+            if (tbphonenumer_cus.Text == "")
+            {
+                labelerror.Visible = false;
+            }
+        }
+
+        private void tbncheckout_Click(object sender, EventArgs e)
+        {
+            int a = tbldetailnivoice.Rows.Count;
+            if (a <= 1)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm!");
+            }
+            else
+            {
+                //.ToString("yyyy-MM-dd")
+
+                //DateTime time = DateTime.Now;
+                //string date = DateTime.UtcNow.ToString("MM-dd-yyyy");
+                //string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                Invoice inv = new Invoice();
+                inv.Customer_ID = Convert.ToInt32(tbidcustomer.Text);
+                inv.Invoice_Name = tbname_cus.Text;
+                inv.totalMoney = tbtotalbill.Text;
+                inv.createdDate = Convert.ToString(DateTime.Now.Date);
+                inv.shipDate = Convert.ToString(DateTime.Now.Date);
+                inv.customerAddress = tbaddress_cus.Text;
+
+                try
+                {
+                    int ab = InvoiceBLL.AddInvoice(inv);
+
+                    for (int i = 0; i <= a - 1; i++)
+                    {
+                        InvoiceDetail invoicedetail = new InvoiceDetail();
+                        string valuestatus = Convert.ToString(tbldetailnivoice.Rows[i].Cells["status"].Value);
+                        if (valuestatus == "1")
+                        {
+                            invoicedetail.Invoice_ID = ab;
+                            invoicedetail.Product_ID = Convert.ToInt32(tbldetailnivoice.Rows[i].Cells["ID_Pronivoice"].Value.ToString());
+                            invoicedetail.Price = tbldetailnivoice.Rows[i].Cells["thanhtien"].Value.ToString();
+                            invoicedetail.Amount = Convert.ToInt32(tbldetailnivoice.Rows[i].Cells["soluongsp"].Value.ToString());
+                            InvoiceBLL.AddInvoiceDetail(invoicedetail);
+                        }
+                    }
+                    tbldetailnivoice.Rows.Clear();
+                    tbidcustomer.Text = "";
+                    tbname_cus.Text = " ";
+                    tbphone_cus.Text = "";
+                    tbfeeship.Text = " ";
+                    tbtotalbill.Text = "";
+                    tbtamtinh.Text = "";
+                    checkship.Checked = false;
+                    checkBox1.Checked = false;
+                    MessageBox.Show(ab.ToString());
+
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng kiểm tra thông tin!");
+                }
+            }
         }
     }
 }
