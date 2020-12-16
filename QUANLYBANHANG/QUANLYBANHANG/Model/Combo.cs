@@ -9,7 +9,7 @@ namespace QUANLYBANHANG.Model
 {
     public class Combo
     {
-        public int combo_ID { get; set; }
+        public int combo_ID { get; set; } 
         public string combo_name { get; set; }
         public string product_list { get; set; }
         public DateTime start_date { get; set; }
